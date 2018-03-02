@@ -5,10 +5,10 @@ from datetime import date
 
 # Credentials
 
-CONSUMER_KEY = os.environ.get('CONSUMER_KEY')
-CONSUMER_SECRET = os.environ.get('CONSUMER_SECRET')
-ACCESS_KEY = os.environ('ACCESS_KEY')
-ACCESS_SECRET = os.environ('ACCESS_SECRET')
+CONSUMER_KEY = os.environ['CONSUMER_KEY']
+CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+ACCESS_KEY = os.environ['ACCESS_KEY']
+ACCESS_SECRET = os.environ['ACCESS_SECRET']
 
 # Aunticarse usando lo antes seteado
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
