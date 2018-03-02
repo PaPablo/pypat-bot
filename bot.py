@@ -14,7 +14,6 @@ ACCESS_SECRET = os.environ['ACCESS_SECRET']
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
-
 tweets = []
 while True:
     for tweet in tweepy.Cursor(api.search,q="#patagonia #python #meetup -filter:retweets since:{}".format(date.today().strftime('%Y-%m-%d')),tweet_mode='extended').items():
@@ -22,7 +21,6 @@ while True:
             if tweet.id not in tweets:
                 tweet.retweet()
                 tweets.append(tweet.id)
-
         except tweepy.TweepError as e:
             print(e.reason)
 
